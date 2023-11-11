@@ -1,48 +1,44 @@
 # Project Plan
 
 ## Title
-The impact of the ferry panneger in Keil port
+The Exploring the Intersection of Weather Conditions and Road Speed Limits
 
 
 ## Main Question
 
 <!-- Think about one main question you want to answer based on the data. -->
-1. Is there any correlation between Keil Ferry Panneger and the crime rate?
-2. Is there any correlation between Keil Ferry Panneger and unemployment rate?
+1. How does temperature affect the occurrence of speeding?
+2. Is there a correlation between wind conditions and instances of exceeding the speed limit?
+3. Does precipitation have any impact on the likelihood of traffic fines due to speeding in the Bonn city area?
+4. Are there any patterns or trends in the data that suggest a consistent relationship between weather variables (temperature, wind, precipitation) and traffic violations related to speeding?
 
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
 
-In this project I try to find the impact of Ferry Panneger in Keil port in local crime rate and unemployment rate.
+This study investigates the correlation between weather conditions and speed limits on roads within the Bonn city area. Additionally, it examines instances of traffic fines resulting from exceeding speed limits, exploring their relationship with temperature, wind, and precipitation on specific dates throughout the year 2022, spanning from January to December.
 
 
 ## Datasources
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1:
-* Metadata URL: https://www.govdata.de/web/guest/daten/-/details/passagiere-im-fahrverkehr-im-kieler-hafen16a11
-* Data URL: https://www.kiel.de/opendata/kiel_transport_verkehr_faehrverkehr_passagiere_im_faehrverkehr_hafen.csv
+### Datasource1: Bußgelder fließender Verkehr 2022
+* Metadata URL: https://mobilithek.info/offers/-5415240082314561823
+* Data URL: https://opendata.bonn.de/sites/default/files/Geschwindigkeitsverstoesse2022.csv
 * Data Type: CSV
 
 
-### Datasource2:
-* Metadata URL: https://www.govdata.de/web/guest/daten/-/details/gemeldete-straftaten-in-kiel84aa3
-* Data URL: https://www.kiel.de/opendata/kiel_gesetze_justiz_gemeldete_straftaten.csv
+### Datasource2: NASA Prediction Of Worldwide Energy Resources
+* Metadata URL: https://power.larc.nasa.gov/data-access-viewer
+* Data URL: https://power.larc.nasa.gov/data-access-viewer
 * Data Type: CSV
+This weather dataset is generated from the POWER project using the following options:
+* Date: Jan 01, 2022 to Dec 31, 2022
+* Temporal: Daily
+* Location: Bonn
+* Parameters: Temperature at 2 Meters, Precipitation, Wind Speed at 10 Meters.
 
-### Datasource3:
-* Metadata URL: https://www.govdata.de/web/guest/daten/-/details/arbeitslose-in-kielc10ff
-* Data URL: https://www.kiel.de/opendata/kiel_wirtschaft_arbeit_arbeitslose.csv
-* Data Type: CSV
-
-### Datasource4:
-* Metadata URL: https://www.govdata.de/web/guest/daten/-/details/bevolkerung-seit-1975-in-kielc7653
-* Data URL: https://www.kiel.de/opendata/kiel_bevoelkerung_bevoelkerung.csv
-* Data Type: CSV
-
-Short description of the DataSource.
 
 ## Work Packages
 
