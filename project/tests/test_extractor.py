@@ -9,9 +9,9 @@ def extractor():
 def test_if_weather_data_is_extracted(extractor):
     extractor.save_weather_data()
     
-    assert os.path.exists("./project/data/extras/weather_data.csv")
+    assert os.path.exists("./data/weather_data.csv")
     
 def test_if_traffic_data_is_extracted(extractor):
     extractor.save_traffic_data()
     
-    assert os.path.exists("./project/data/extras/traffic_data.csv")
+    assert os.path.exists("./data/traffic_data.csv")

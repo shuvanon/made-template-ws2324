@@ -22,4 +22,4 @@ def test_traffic_data_after_transformation(transformer, extractor):
     traffic_data = extractor.get_traffic_data()
     transformed_data = transformer.transform_traffic_data(traffic_data)
     assert transformed_data.shape[1] == 2
-    assert transformed_data.columns[0] == "DATE" and transformed_data.columns[1] == "FREQUENCIES"
+    assert transformed_data.columns[0] == "DATE" and transformed_data.columns[1] == "TRAFFIC OFFENCE FREQUENCIES"

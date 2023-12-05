@@ -1,5 +1,6 @@
 import pandas as pd
 import sqlite3
+from sqlalchemy import create_engine, text
 
 class Loader:
     def __init__(self, table_name, path):
