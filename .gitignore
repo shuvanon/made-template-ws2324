@@ -140,7 +140,8 @@ cython_debug/
 # data
 .mat
 .DS_Store
-/data/*
-!/data/.gitkeep
+/project/data/*
+!.gitkeep
 *.sqlite
 *.csv
+.idea
