@@ -68,9 +68,10 @@ def main():
     #filter for positive integer
     numeric_columns = ["petrol", "diesel", "gas", "electro", "hybrid", "plugInHybrid", "others"]
     df[numeric_columns] = df[numeric_columns].apply(pd.to_numeric, errors="coerce")
+    df = df.dropna(subset=numeric_columns)
 
     
-    df.dropna()
+    #df.dropna()
     
     df.to_sql('cars', 'sqlite:///./cars.sqlite', if_exists='replace', index=False, dtype=columnTypesOut)
     
