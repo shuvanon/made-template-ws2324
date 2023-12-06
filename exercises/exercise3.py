@@ -72,7 +72,7 @@ def main():
     
     df.dropna()
     
-    df.to_sql('cars', 'sqlite:///../cars.sqlite', if_exists='replace', index=False, dtype=columnTypesOut)
+    df.to_sql('cars', 'sqlite:///./cars.sqlite', if_exists='replace', index=False, dtype=columnTypesOut)
     
 if __name__ == "__main__":
     main()
