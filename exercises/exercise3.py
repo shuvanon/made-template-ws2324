@@ -23,12 +23,6 @@ useColumsNames = [
     'others'
 ]
 
-columnTypes = {
-    'date': str, 
-    'CIN': str,
-    'name': str
-    }
-
 columnTypesOut = {'date': String, 
     'CIN': String,
     'name': String,
@@ -70,9 +64,8 @@ def main():
     df[numeric_columns] = df[numeric_columns].apply(pd.to_numeric, errors="coerce")
     df = df.dropna(subset=numeric_columns)
 
-    
-    #df.dropna()
-    
+
+    #save database 
     df.to_sql('cars', 'sqlite:///./cars.sqlite', if_exists='replace', index=False, dtype=columnTypesOut)
     
 if __name__ == "__main__":
