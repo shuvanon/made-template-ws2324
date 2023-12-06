@@ -36,7 +36,7 @@ class Extractor:
         df.to_csv(output_dir, sep=";")
 
     def get_config(self):
-        config_file = './project/data_pipeline/config.yaml'
+        config_file = './data_pipeline/config.yaml'
         with open(config_file, 'rb') as f:
             return yaml.load(f, Loader=yaml.FullLoader)
 
