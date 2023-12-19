@@ -1,0 +1,37 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - project/**
+
+jobs:
+  pipeline-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'lts/*'
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install Python dependencies
+      uses: py-actions/py-dependency-install@v4
+      with:
+        path: "./project/requirements.txt"
+
+    - name: Grant executable permissions to tests.sh
+      run: chmod +x ./project/tests.sh
+    
+    - name: Run tests
+      run: |
+        ./project/tests.sh
