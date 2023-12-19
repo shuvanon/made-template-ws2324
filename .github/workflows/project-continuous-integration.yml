@@ -3,9 +3,9 @@ name: Continuous Integration
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - project/**
+      - project/**
 
 jobs:
   pipeline-test:
@@ -27,13 +27,13 @@ jobs:
         python-version: 3.11
 
     - name: Install Python dependencies
-      uses: py-actions/py-dependency-install@v4
-      with:
-        path: "./project/requirements.txt"
+      working-directory: ${{ env.WORKING_DIR }}
+      run: pip install -r requirements.txt
 
     - name: Grant executable permissions to tests.sh
       run: chmod +x ./project/tests.sh
     
     - name: Run tests
+      working-directory: ${{ env.WORKING_DIR }}
       run: |
-        ./project/tests.sh
+        ./tests.sh
