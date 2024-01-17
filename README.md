@@ -1,42 +1,85 @@
-# Methods of Advanced Data Engineering Template Project
+# Analysis of the Relationship Between Weather Conditions and Traffic Offense Frequencies
 
-This template project provides some structure for your open data project in the MADE module at FAU.
-This repository contains (a) a data science project that is developed by the student over the course of the semester, and (b) the exercises that are submitted over the course of the semester.
-Before you begin, make sure you have [Python](https://www.python.org/) and [Jayvee](https://github.com/jvalue/jayvee) installed. We will work with [Jupyter notebooks](https://jupyter.org/). The easiest way to do so is to set up [VSCode](https://code.visualstudio.com/) with the [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
+## Project Overview
+This study investigates the correlation between weather conditions and road speed limits within the Bonn city area. Additionally, it examines instances of traffic fines resulting from exceeding speed limits, exploring their relationship with temperature, wind, and precipitation on specific dates throughout the year 2022, spanning from January to December.
 
+## Project Structure
+```bash
+├───examples
+│       data-exploration-example.ipynb
+│       final-report-example.ipynb
+│       project-plan-example.md
+│
+├───exercises
+│       exercise1.py
+│       exercise2.jv
+│       exercise3.py
+│
+└───project
+    │   exploration.ipynb
+    │   pipeline.sh
+    │   project-plan.md
+    │   report.ipynb
+    │   requirements.txt
+    │   tests.sh
+    │
+    ├───data
+    │       .gitkeep
+    │
+    ├───data_pipeline
+    │   │   config.yaml
+    │   │   extract.py
+    │   │   load.py
+    │   │   mobilithek.py
+    │   │   pipeline.py
+    │   │   power_api.py
+    │   │   transform.py
+    │   │   __init__.py
+    │   │
+    │   
+    └───tests
+        │   test_extractor.py
+        │   test_loader.py
+        │   test_pipeline.py
+        │   test_transformer.py
+        │   __init__.py
+```
+## Key project files and their functions:
+* `project/pipeline.sh`: It will run an automated ETL pipeline that creates a SQLite database named analysis.sqlite that contains required data.
+* `project/tests.sh` : It will run the test cases for the ETL pipeline.
 
-## Project Work
-Your data engineering project will run alongside lectures during the semester. We will ask you to regularly submit project work as milestones so you can reasonably pace your work. All project work submissions **must** be placed in the `project` folder.
+## Project Setup
 
-### Exporting a Jupyter Notebook
-Jupyter Notebooks can be exported using `nbconvert` (`pip install nbconvert`). For example, to export the example notebook to html: `jupyter nbconvert --to html examples/final-report-example.ipynb --embed-images --output final-report.html`
+1. Clone the repository:
 
+```
+git clone git@github.com:shuvanon/made-template-ws2324.git
+```
 
-## Exercises
-During the semester you will need to complete exercises, sometimes using [Python](https://www.python.org/), sometimes using [Jayvee](https://github.com/jvalue/jayvee). You **must** place your submission in the `exercises` folder in your repository and name them according to their number from one to five: `exercise<number from 1-5>.<jv or py>`.
+2. Create a virtual environment:
 
-In regular intervalls, exercises will be given as homework to complete during the semester. We will divide you into two groups, one completing an exercise in Jayvee, the other in Python, switching each exercise. Details and deadlines will be discussed in the lecture, also see the [course schedule](https://made.uni1.de/). At the end of the semester, you will therefore have the following files in your repository:
+```
+python3.11 -m venv <env_name>
+```
 
-1. `./exercises/exercise1.jv` or `./exercises/exercise1.py`
-2. `./exercises/exercise2.jv` or `./exercises/exercise2.py`
-3. `./exercises/exercise3.jv` or `./exercises/exercise3.py`
-4. `./exercises/exercise4.jv` or `./exercises/exercise4.py`
-5. `./exercises/exercise5.jv` or `./exercises/exercise5.py`
+3. Activate the virtual environment:
 
-### Exercise Feedback
-We provide automated exercise feedback using a GitHub action (that is defined in `.github/workflows/exercise-feedback.yml`). 
+```
+source <env_name>/bin/activate
+``` 
 
-To view your exercise feedback, navigate to Actions -> Exercise Feedback in your repository.
+4. Install requirements:
 
-The exercise feedback is executed whenever you make a change in files in the `exercise` folder and push your local changes to the repository on GitHub. To see the feedback, open the latest GitHub Action run, open the `exercise-feedback` job and `Exercise Feedback` step. You should see command line output that contains output like this:
+```
+pip install -r requirements.txt
+```
 
-```sh
-Found exercises/exercise1.jv, executing model...
-Found output file airports.sqlite, grading...
-Grading Exercise 1
-	Overall points 17 of 17
-	---
-	By category:
-		Shape: 4 of 4
-		Types: 13 of 13
+5. Run data pipeline
+```
+python //data_pipeline/pipeline.py
+```
+
+6. Run Test
+```
+pytest -r project/tests
 ```
