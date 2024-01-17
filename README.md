@@ -83,3 +83,10 @@ python //data_pipeline/pipeline.py
 ```
 pytest -r project/tests
 ```
+
+
+## Analysis Report
+
+The motivation behind this study is to explore whether specific weather parameters can be indicators or contributors to changes in the number of traffic offences, thereby aiding in better traffic management and safety measures. The analysis revealed notable correlations between several weather parameters and traffic offence frequencies.
+
+Explore the detailed analysis report [here](https://github.com/shuvanon/made-template-ws2324/blob/main/project/report.ipynb).
