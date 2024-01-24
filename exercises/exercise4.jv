@@ -42,7 +42,7 @@ pipeline Ex4Pipeline{
 
     block DatabaseLoader oftype SQLiteLoader { 
         table: "temperatures"; 
-        file: "./temperatures.sqlite"; 
+        file: "temperatures.sqlite"; 
     }
 
     DataExtractor
