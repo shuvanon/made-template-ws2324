@@ -40,7 +40,7 @@ pipeline Ex4Pipeline{
         use: CelsiusToFahrenheit;
     }
 
-       block DatabaseLoader oftype SQLiteLoader { 
+    block DatabaseLoader oftype SQLiteLoader { 
         table: "temperatures"; 
         file: "./temperatures.sqlite"; 
     }
